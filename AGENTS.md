@@ -1,50 +1,24 @@
-# Comment.io — Agent Instructions
+# Comment.io agent instructions
 
-Comment.io is the agent-native document editor: humans and AI agents collaborate in
-the same markdown document (a "comm") with real-time editing, comments, suggestions,
-and per-edit provenance.
+Comment.io is a collaborative Markdown editor where humans and AI agents write docs together. You install Comment in your agent, then you and your agents read, write, and comment on shared docs.
 
-## Canonical machine docs
+## Install
 
-First use any Comment.io tools or comm access already available in your runtime.
-For standard MCP and an existing comm, call `open_comm`, then `read_comm`; call
-`create_comm` only when the human requested a new comm, never as setup
-verification. For every other capability or setup route, fetch
-`$BASE/llms/setup.txt` and follow the first matching typed handoff; it contains
-the canonical share-ingress, browser, URL-fetch, handle, skill, connector, and
-persistent-computer choices. Use `$BASE/llms/setup/rest.txt` only for focused
-authenticated-HTTPS detail. Do not recreate those instructions here.
+1. **Plugin** (includes the MCP) — Claude Code, Claude Cowork, Codex, OpenAI Work.
+2. **Hosted MCP** — every other MCP-capable agent.
 
-Keep every fallback on the same Comment.io deployment. For a supplied clean
-shortlink, resolve it without credentials or automatic redirects and accept its
-token-bearing `/d/{slug}` destination only after its origin and slug match the
-live handoff's `api_reference_url` and `slug`. Set and freeze `$BASE` to that
-validated final comm origin; a shortlink origin is never `$BASE`. With no supplied comm, use the
-origin of the active Comment.io tool/account or the explicitly selected
-profile. Use `https://comment.io` only when none of those provides an origin.
+See https://comment.io/install. Agent guide: https://comment.io/llms.txt.
 
-Only when the current tool or supplied-comm handoff does not cover the task,
-fetch **`$BASE/llms.txt`** for the compact startup index. Exact direct-REST
-behavior and recovery live at **`$BASE/llms/reference.txt`**. Always prefer the live files; the
-`llms.txt` in this repo is a mirror of the startup index.
+Use Comment.io tools first. With standard MCP, call `read_comm` with `url_or_slug`; call `create_comm` only when the human requested a new Comm.
 
-## Direct REST fallback for a requested new comm
+Without a working tool route, resolve a supplied clean shortlink once without credentials or automatic redirects. Accept only its Comment.io `/d/{slug}` destination and freeze that destination origin as `$BASE`.
 
-Use REST only when the user asked for a new comm and no existing Comment.io
-tool or interactive browser route can create it. Follow the live
-**`$BASE/llms/setup/rest.txt`** path; it owns identity, anonymous fallback,
-per-doc tokens, and the safe first request. Exact endpoint shapes and recovery
-behavior live only in **`$BASE/llms/reference.txt`**. Do not copy an API recipe
-from this repository mirror.
+With no supplied Comm, set `$BASE` from the active Comment.io tool/account or explicitly selected profile. Use `https://comment.io` only when none provides an origin.
 
-## Official channels
+Keep every fallback on the supplied Comm's Comment.io origin. Exact authenticated HTTPS behavior lives at `$BASE/llms/reference.txt`.
 
-- Website and developer docs: https://comment.io · https://comment.io/docs
-- Machine-doc startup index: https://comment.io/llms.txt
-- Exact REST reference: https://comment.io/llms/reference.txt
-- Hosted MCP connector for chat apps: https://comment.io/connect
-- CLI on npm: [`@comment-io/cli`](https://www.npmjs.com/package/@comment-io/cli) — `npm install -g @comment-io/cli`
-- Agent skill install: `curl -q -fsSL 'https://comment.io/skill' | sh`
-- Engineering-workflow skills: https://github.com/comment-hq/skills (`npx skills add comment-hq/skills`) · https://skills.sh/comment-hq/skills
-- Claude Code plugin: https://github.com/comment-hq/comment-io-claude-code-plugin
-- OpenClaw plugin: https://github.com/comment-hq/openclaw-plugin
+- Install: https://comment.io/install
+- Product and developer docs: https://comment.io/docs
+- Agent guide: https://comment.io/llms.txt
+- REST reference: https://comment.io/llms/reference.txt
+- Hosted connector: https://comment.io/install

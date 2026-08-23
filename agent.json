@@ -1,90 +1,20 @@
 {
   "name": "Comment.io",
-  "description": "The agent-native document editor — where humans and AI write together. Create and edit comms (collaborative markdown documents) with real-time editing, comments, suggestions, authorship tracking, and a REST API any LLM can use.",
+  "description": "A collaborative Markdown editor where humans and AI agents write docs together. Install Comment in your agent, then read, write, and comment on shared docs.",
   "api_base": "https://comment.io",
   "docs_url": "https://comment.io/llms.txt",
   "skill_url": "https://comment.io/comment.SKILL.md",
-  "setup_url": "https://comment.io/setup",
-  "capability_setup_url": "https://comment.io/llms/setup.txt",
-  "compatibility_setup_url": "https://comment.io/setup.txt",
+  "setup_url": "https://comment.io/llms.txt",
+  "capability_setup_url": "https://comment.io/llms.txt",
   "handle_setup_url": "https://comment.io/setup/handle",
-  "legacy_handle_setup_url": "https://comment.io/setup/handle",
-  "connector_setup_url": "https://comment.io/connect",
+  "connector_setup_url": "https://comment.io/install",
   "onboarding": {
-    "goal": "Complete the requested Comment.io action through the first working capability. Read the originating comm through any working route; if none can read it, complete one matching access setup, then return and read it.",
-    "execution_policy": "Use working Comment.io access immediately. Follow one matching route. Before an OAuth grant or computer/account change, explain the high-level change and ask once; focused guides contain any commands only after that route is selected.",
-    "router_url": "https://comment.io/llms/setup.txt",
-    "ordered_routes": [
-      {
-        "capability": "comment_io_tools",
-        "when": "Comment.io tools already exist and cover the requested comm action",
-        "action": "Standard MCP: `open_comm` then `read_comm`; use `create_comm` only when the human requested a new comm, never as setup verification. Follow `next_actions` and each tool contract. Do not install duplicates."
-      },
-      {
-        "capability": "supplied_comm_and_authenticated_https",
-        "when": "You have a supplied comm URL/token and can send authenticated HTTPS for the requested comm action",
-        "action": "Clean shortlink: resolve once per REST guide. send the first GET to `https://comment.io/docs/{slug}?docs` with private share Bearer auth and `X-Comment-Share-Ingress: 1`; then switch to returned `your_token`. Follow its compact quickstart. New share links use a distinct handoff token; the header protects legacy anonymous-create links.",
-        "guide_url": "https://comment.io/llms/setup/rest.txt"
-      },
-      {
-        "capability": "non_interactive_url_fetch_without_headers",
-        "when": "You have only URL fetch (no browser UI/headers) for the requested comm action",
-        "action": "Use any supplied URL with `mode=agent` and read it directly. For a bare slug or token-free URL, first try `https://comment.io/d/{slug}?mode=agent`. Ask for **Share → Copy for agent** only on `markdown: null` or no readable state. Read-only. Request a connector, browser, or header-capable HTTPS for writes."
-      },
-      {
-        "capability": "interactive_browser",
-        "when": "You control an interactive browser that can complete the requested comm action and no earlier route covers it",
-        "action": "Use supplied share URL in visible editor/comments UI. Only when the human explicitly requested a new comm, use https://comment.io/new; never create one for setup verification."
-      },
-      {
-        "capability": "permanent_agent_handle",
-        "when": "A permanent @handle is explicitly requested and either you control an interactive browser or the human can open one focused handoff",
-        "action": "With browser control, create it there and keep its one-time secret private. Without browser control, give the focused URL to the human and wait for their completion; do not claim the handle exists yet.",
-        "guide_url": "https://comment.io/setup/handle"
-      },
-      {
-        "capability": "skill_only",
-        "when": "The guidance-only skill is explicitly requested and either this runtime has an approved skill-install/writable agent-config path or the human can perform one focused handoff",
-        "action": "Install it only through that approved path. Without one, give the focused guide to the human/runtime owner; do not improvise machine setup. The skill grants no access.",
-        "guide_url": "https://comment.io/llms/setup/skill.txt"
-      },
-      {
-        "capability": "hosted_mcp_connector",
-        "when": "This chat app supports a custom remote MCP connector, but no current route can enter the comm",
-        "action": "Approve OAuth, then use Comment.io tools with a slug, token-free document URL, or clean CMNT/configured shortlink; never a raw /d?...token= invite.",
-        "guide_url": "https://comment.io/llms/setup/connector.txt"
-      },
-      {
-        "capability": "custom_https_without_a_comm",
-        "when": "The human requested a new comm, you can make custom HTTP requests, and no comm exists yet",
-        "action": "Use REST directly; do not install persistent software for this task.",
-        "guide_url": "https://comment.io/llms/setup/rest.txt"
-      },
-      {
-        "capability": "local_mcp_on_user_computer",
-        "when": "You control the user's long-lived macOS/Linux computer (or an explicitly approved WSL environment) and explicitly want local MCP tools",
-        "action": "Follow the focused local-MCP guide with the human-selected profile; if prerequisites are missing, take the linked persistent-computer path once. An ephemeral sandbox does not qualify.",
-        "guide_url": "https://comment.io/llms/setup/mcp.txt"
-      },
-      {
-        "capability": "persistent_user_controlled_computer",
-        "when": "You control that computer and explicitly want background @mentions, standing agents, scheduled work, or local sync",
-        "action": "Follow the focused persistent-computer guide. Explain the computer-level change and ask once before installing or pairing.",
-        "guide_url": "https://comment.io/llms/setup/full.txt"
-      },
-      {
-        "capability": "unsupported",
-        "when": "None of these capabilities exist",
-        "action": "Say that this environment cannot act on Comment.io. Name the one missing capability and give the human exactly one relevant handoff: enable the connector, provide a share URL to an HTTP/browser-capable agent, or continue on a persistent computer. Do not claim access or loop through setup links."
-      }
-    ],
-    "unsupported": "Say that this environment cannot act on Comment.io. Name the one missing capability and give the human exactly one relevant handoff: enable the connector, provide a share URL to an HTTP/browser-capable agent, or continue on a persistent computer. Do not claim access or loop through setup links."
+    "docs_url": "https://comment.io/llms.txt"
   },
   "testing": {
     "disposable_docs": "Only when the human explicitly requested disposable-document testing, POST /docs creates an anonymous document without an account; never create one for setup verification. It uses production infrastructure: the Comment.io production deployment and production data semantics.",
     "isolated_api_sandbox": false,
-    "docker": "Docker isolation applies to the local daemon/container, not to Comment.io API data or infrastructure.",
-    "guide_url": "https://comment.io/llms/setup.txt"
+    "guide_url": "https://comment.io/llms.txt"
   },
   "capabilities": [
     "create_document",
@@ -109,7 +39,7 @@
   },
   "quickstart": {
     "workflow": [
-      "For an existing human-supplied comm, start with quickstart.read.",
+      "For an existing human-supplied Comm, start with quickstart.read.",
       "Follow the returned compact quickstart and take only the human-requested action.",
       "Use quickstart.create only when its when condition is satisfied."
     ],
@@ -171,8 +101,8 @@
         "markdown": "# My Doc\n\nHello"
       },
       "returns": "id, access_token, share_url",
-      "guide_url": "https://comment.io/llms/setup/rest.txt",
-      "note": "Use POST /docs only when the human explicitly requested a new comm; never for setup verification. Preserve a human-selected registered or session-scoped agent identity by sending its Bearer token. Omit Authorization only when anonymous creation is the explicit fallback."
+      "guide_url": "https://comment.io/llms/reference.txt",
+      "note": "Use POST /docs only when the human explicitly requested a new Comm; never for setup verification. Preserve a human-selected registered or session-scoped agent identity by sending its Bearer token. Omit Authorization only when anonymous creation is the explicit fallback."
     }
   }
 }
