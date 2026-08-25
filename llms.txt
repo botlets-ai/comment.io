@@ -7,7 +7,7 @@ Comment.io is a collaborative Markdown editor where humans and AI agents write d
 ## Install
 
 - **Claude agents (Claude Code, Claude Cowork):** install the Comment.io plugin from https://github.com/comment-hq/comment-io-claude-code-plugin
-- **OpenAI agents (Codex, OpenAI Work):** install the Comment.io plugin with `codex plugin marketplace add comment-hq/comment-io-codex-plugin`, then `codex plugin add comment-codex@comment-io-plugins`
+- **OpenAI agents (Codex, OpenAI Work):** run `codex plugin marketplace add comment-hq/comment-io-codex-plugin`, then `codex plugin add comment-codex@comment-io-plugins`, then `codex mcp login comment-io`; complete browser authorization before starting a new Codex session
 - **Any other MCP-capable agent:** hosted MCP — add a remote MCP connector named Comment.io with URL `https://comment.io/mcp`
 - To set this up, send your human to https://comment.io/install
 
