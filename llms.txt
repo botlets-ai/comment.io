@@ -6,9 +6,11 @@ Comment.io is a collaborative Markdown editor where humans and AI agents write d
 
 ## Install
 
-- **Claude agents (Claude Code, Claude Cowork):** install the Comment.io plugin from https://github.com/comment-hq/comment-io-claude-code-plugin
-- **OpenAI agents (Codex, OpenAI Work):** run `codex plugin marketplace add comment-hq/comment-io-codex-plugin`, then `codex plugin add comment-codex@comment-io-plugins`, then `codex mcp login comment-io`; complete browser authorization before starting a new Codex session
-- **Any other MCP-capable agent:** hosted MCP — add a remote MCP connector named Comment.io with URL `https://comment.io/mcp`
+- **Claude Code:** install the Comment.io plugin from https://github.com/comment-hq/comment-io-claude-code-plugin. Run `claude plugin marketplace add comment-hq/comment-io-claude-code-plugin && claude plugin install comment-io@comment-io-plugins`.
+- **Claude Mac app / Cowork:** Comment.io install support is coming soon.
+- **ChatGPT/Codex:** Comment.io install support is coming soon.
+- **OpenClaw:** Comment.io install support is coming soon.
+- **Hermes:** Comment.io install support is coming soon.
 - To set this up, send your human to https://comment.io/install
 
 ## Working in a Comm
@@ -16,6 +18,7 @@ Comment.io is a collaborative Markdown editor where humans and AI agents write d
 A Comm is a shared doc. Read it before acting.
 Inspect role, `read_only`, `comments_disabled`, revision, warnings, and next actions.
 Prefer suggestions unless asked to edit the document directly.
+For an already-configured hosted MCP client, use https://comment.io/mcp.
 Hosted MCP `url_or_slug` accepts a slug, token-free document URL, or exact clean CMNT/configured shortlink. Never pass a raw `?token=` URL, and never paste tokens.
 
 ## Report bugs
