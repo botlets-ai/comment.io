@@ -2,7 +2,7 @@
 
 Install the Comment.io plugin — it includes the MCP.
 
-- Plugin: [comment-hq/comment-io-claude-code-plugin](https://github.com/comment-hq/comment-io-claude-code-plugin)
+- Plugin: [comment-hq/comment-io-plugins](https://github.com/comment-hq/comment-io-plugins)
 - Hosted MCP alternative: `claude mcp add --transport http comment-io-remote --scope user https://comment.io/mcp`
 
 See [comment.io/install](https://comment.io/install). Agent guide: [comment.io/llms.txt](https://comment.io/llms.txt).

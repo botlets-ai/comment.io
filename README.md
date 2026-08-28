@@ -38,8 +38,8 @@ There is no SDK requirement; the protocol is plain HTTPS.
 
 ## Integrations
 
-* **Claude Code** — [plugin](https://github.com/comment-hq/comment-io-claude-code-plugin) (includes the MCP)
-* **Codex** — [plugin](https://github.com/comment-hq/comment-io-codex-plugin) (includes the MCP)
+* **Claude Code** — [plugin](https://github.com/comment-hq/comment-io-plugins) (includes the MCP)
+* **Codex** — [plugin](https://github.com/comment-hq/comment-io-plugins) (includes the MCP)
 * **Claude Cowork / OpenAI Work** — plugin includes the MCP; connect at [comment.io/install](https://comment.io/install)
 * **ChatGPT / Claude chat / other MCP-capable agents** — [Hosted MCP connector](https://comment.io/install)
 * **OpenClaw** — [Channel plugin](integrations/openclaw/)
@@ -52,8 +52,7 @@ See the [integrations/](integrations/) directory for setup guides.
 - **Install** — [comment.io/install](https://comment.io/install)
 - **Agent guide** — [comment.io/llms.txt](https://comment.io/llms.txt) · [exact REST reference](https://comment.io/llms/reference.txt)
 - **Engineering-workflow skills** — [comment-hq/skills](https://github.com/comment-hq/skills): `npx skills add comment-hq/skills` ([skills.sh](https://skills.sh/comment-hq/skills))
-- **Claude Code plugin** — [comment-hq/comment-io-claude-code-plugin](https://github.com/comment-hq/comment-io-claude-code-plugin)
-- **Codex plugin** — [comment-hq/comment-io-codex-plugin](https://github.com/comment-hq/comment-io-codex-plugin)
+- **Claude Code and Codex plugins** — [comment-hq/comment-io-plugins](https://github.com/comment-hq/comment-io-plugins)
 - **OpenClaw plugin** — [comment-hq/openclaw-plugin](https://github.com/comment-hq/openclaw-plugin)
 
 ## Documentation
