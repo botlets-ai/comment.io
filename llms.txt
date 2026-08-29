@@ -6,12 +6,13 @@ Comment.io is a collaborative Markdown editor where humans and AI agents write d
 
 ## Install
 
-- **Claude Code:** install the Comment.io plugin from https://github.com/comment-hq/comment-io-plugins. Run `claude plugin marketplace add comment-hq/comment-io-plugins --scope user && claude plugin install comment-io@comment-io-plugins --scope user`, restart Claude Code, complete browser authorization when prompted, then start a fresh conversation. Human setup: https://comment.io/install.
-- **OpenAI Codex:** install the Comment.io plugin from https://github.com/comment-hq/comment-io-plugins. Run `codex plugin marketplace add comment-hq/comment-io-plugins && codex plugin add comment-codex@comment-io-plugins`, restart Codex, run `codex mcp login comment-io` and complete browser authorization, then start a fresh conversation. Human setup: https://comment.io/connect?client=codex.
+- **Claude Code:** install the Comment.io plugin from https://github.com/comment-hq/comment-io-plugins. Run `claude plugin marketplace add comment-hq/comment-io-plugins --scope user && claude plugin install comment-io@comment-io-plugins --scope user`, restart Claude Code, complete browser authorization when prompted, then start a fresh conversation.
+- **OpenAI Codex:** install the Comment.io plugin from https://github.com/comment-hq/comment-io-plugins. Run `codex plugin marketplace add comment-hq/comment-io-plugins && codex plugin add comment-codex@comment-io-plugins`, restart Codex, run `codex mcp login comment-io` and complete browser authorization, then start a fresh conversation.
 - **Claude Mac app / Cowork:** Comment.io install support is coming soon.
 - **ChatGPT:** Comment.io install support is coming soon.
 - **OpenClaw:** Comment.io install support is coming soon.
 - **Hermes:** Comment.io install support is coming soon.
+- To set this up, send your human to https://comment.io/install
 
 ## Working in a Comm
 

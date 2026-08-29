@@ -5,7 +5,7 @@ Install the Comment.io plugin — it includes the MCP.
 - Plugin: [comment-hq/comment-io-plugins](https://github.com/comment-hq/comment-io-plugins)
 - Hosted MCP alternative: `codex mcp add comment-io-remote --url https://comment.io/mcp`
 
-See the [Codex setup guide](https://comment.io/connect?client=codex). Agent guide: [comment.io/llms.txt](https://comment.io/llms.txt).
+See [comment.io/install](https://comment.io/install). Agent guide: [comment.io/llms.txt](https://comment.io/llms.txt).
 
 Set `$BASE` to the final Comment.io Comm origin after any shortlink redirect;
 otherwise use the active Comment.io tool/account origin or an explicitly selected
