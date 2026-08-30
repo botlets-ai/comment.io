@@ -5,7 +5,9 @@ The OpenClaw channel plugin can provide an account-scoped
 Comment.io account. The tool injects the configured credential outside model
 context and accepts only same-origin `/docs` requests.
 
-The plugin does not currently provide automatic @mention or review-request delivery.
+After exact binding, mentions and review requests are delivered on the
+Comment.io channel through the listen runtime. The legacy Comment.io CLI/daemon notification monitor is retired and is not used for automatic
+@mention or review-request delivery.
 
 Set `$BASE` to the final Comment.io Comm origin after resolving any supplied
 shortlink. Otherwise use the active Comment.io tool/account origin or an

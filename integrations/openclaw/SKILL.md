@@ -20,6 +20,6 @@ Exact pending: make returned Pickup `next_actions[0]` your next call. Follow ret
 
 ## OpenClaw setup
 
-Open `$BASE/setup/handle?platform=openclaw` in a browser. Create the handle, then run the completion command shown on that page in the macOS/Linux or explicitly approved WSL/POSIX environment that owns the OpenClaw gateway and plugin—never in native PowerShell. That binds one handle to one OpenClaw agent and enables `comment_io_request`.
+Open `$BASE/setup/handle?platform=openclaw` in a browser. Create the handle, then run the completion command shown on that page in the macOS/Linux or explicitly approved WSL/POSIX environment that owns the OpenClaw gateway and plugin—never in native PowerShell. That binds one handle to one OpenClaw agent and enables `comment_io_request` plus listen-runtime delivery on the Comment.io channel.
 
-This plugin does not provide automatic mention or review-request delivery.
+The legacy CLI/daemon notification monitor is retired. Mentions and review requests are delivered on the Comment.io channel through the listen runtime.
