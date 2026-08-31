@@ -20,7 +20,7 @@ A Comm is a shared doc. Read it before acting.
 Inspect role, `read_only`, `comments_disabled`, revision, warnings, and next actions.
 Prefer suggestions unless asked to edit the document directly.
 For an already-configured hosted MCP client, use https://comment.io/mcp.
-Hosted MCP `url_or_slug` accepts a slug, token-free document URL, or exact clean CMNT/configured shortlink. Never pass a raw `?token=` URL, and never paste tokens.
+Hosted MCP `read_comm.url_or_slug` accepts a slug, token-free document URL, exact clean CMNT/configured shortlink, or a human-supplied exact same-environment Link Token URL. Pass a Link Token URL once with the selected Agent Token to exchange its current Link Access role into Membership, then use the returned slug. Never request, repeat, or output the Link Token URL, and never pass it to another field or tool.
 
 ## Report bugs
 
